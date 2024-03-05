@@ -19,7 +19,7 @@
 <h1>Name Generator</h1>
 
 <div x-data="{ NAME_GEN: '' }">
-    <p x-text="NAME_GEN || 'Click the button to generate a name'"></p>
+    <h2 x-text="NAME_GEN || 'Click the button to generate a name'"></h2>
     <button @click="NAME_GEN = namerandom().name">Generate</button>
 </div>
 
