@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaFrameworksOne</title>
+    <script src="utilities.js"></script>
+    <script src="//unpkg.com/alpinejs" defer></script>
+    <link rel="stylesheet" href="/styles/screen.css">
+</head>
+<body  x-data="nameGenerator()">
+
+    <nav>
+        <ul>
+          <li><a href="/" title="Go home">Home</a></li>
+          <li><a href="/gen/" title="Name Generator">Name Generator</a></li>
+        </ul>
+      </nav>
+
+ <h1>Name Generator</h1>
+
+ <div x-data="{ namerandom: '' }">
+  <p x-text="generatedName || 'Click the button to generate a name (out of 10)'"></p>
+  <button @click="generateName()">Generate a Name</button>
+</div>
+
+ <script>
+  function namerandom() {
+  
+  const names = ['Rhonda', 'Brian', 'Emily', 'Chloe', 'David', 'Patrick', 'Sophie', 'Adam', 'Kamdyn', 'Ethan', 'Ricardo'];
+  
+  return {
+    
+    get name() {
+      
+      return names[Math.floor(Math.random() * names.length)];
+    },
+  }
+}
+</script>
+
+
+</body>
+</html>
