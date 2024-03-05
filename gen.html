@@ -3,42 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FMWK UNATTEMPT</title>
-    <script src="utilities.js"></script>
+    <title>New Attempt</title>
     <script src="//unpkg.com/alpinejs" defer></script>
     <link rel="stylesheet" href="/styles/screen.css">
 </head>
-<body  x-data="nameGenerator()">
+<body>
 
-    <nav>
-        <ul>
-          <li><a href="/" title="Go home">Home</a></li>
-          <li><a href="/gen/" title="Name Generator">Name Generator</a></li>
-        </ul>
-      </nav>
+<nav>
+    <ul>
+        <li><a href="/" title="Go home">Home</a></li>
+        <li><a href="/gen/" title="Name Generator">Name Generator</a></li>
+    </ul>
+</nav>
 
- <h1>Name Generator</h1>
+<h1>Name Generator</h1>
 
- <div x-data="{ namerandom: '' }">
-  <p x-text="generatedName || 'Click the button to generate a name (out of 10)'"></p>
-  <button @click="generateName()">Generate a Name</button>
+<div x-data="{ generatedName: '' }">
+    <p x-text="generatedName || 'Click the button to generate a name'"></p>
+    <button @click="generatedName = namerandom().name">Generate</button>
 </div>
 
- <script>
-  function namerandom() {
-  
-  const names = ['Rhonda', 'Brian', 'Emily', 'Chloe', 'David', 'Patrick', 'Sophie', 'Adam', 'Kamdyn', 'Ethan', 'Ricardo'];
-  
-  return {
-    
-    get name() {
-      
-      return names[Math.floor(Math.random() * names.length)];
-    },
-  }
-}
+<script>
+    function namerandom() {
+        const names = ['Rhonda', 'Brian', 'Emily', 'Chloe', 'David', 'Patrick', 'Sophie', 'Adam', 'Kamdyn', 'Ethan', 'Ricardo'];
+        return {
+            get name() {
+                return names[Math.floor(Math.random() * names.length)];
+            },
+        }
+    }
 </script>
-
 
 </body>
 </html>
